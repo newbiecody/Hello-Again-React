@@ -4,15 +4,14 @@ import { SetStateAction, useState } from "react";
 import { CAROUSEL_IMAGE_PATHS } from "../constants";
 import { triggerCbOnInterval } from "../utils";
 import Image from "next/image";
-import './Carousel.scss';
+import "./Carousel.scss";
 import classNames from "classnames";
 
 interface ICarouselDots {
-
-  setCarouselImageIndex: React.Dispatch<SetStateAction<number>>
+  setCarouselImageIndex: React.Dispatch<SetStateAction<number>>;
 }
 function CarouselDot() {
-  return <div className="bg-[#bbb]"></div>
+  return <div className="bg-[#bbb]"></div>;
 }
 
 export default function Carousel({}) {
@@ -20,7 +19,6 @@ export default function Carousel({}) {
   triggerCbOnInterval(() => {
     setCarouselImageIndex((prev) => (prev + 1) % CAROUSEL_IMAGE_PATHS.length);
   }, 5000);
-  console.log(carouselImageIndex)
   const carouselImages = CAROUSEL_IMAGE_PATHS.map((path, index) => (
     <Image
       key={path}
@@ -28,14 +26,25 @@ export default function Carousel({}) {
       width={960}
       height={540}
       style={{
-        width: "100%"
+        width: "100%",
       }}
-      className={classNames('fade', index !== carouselImageIndex ? 'hidden-slide' : 'active-slide'
+      className={classNames(
+        "fade",
+        index !== carouselImageIndex ? "hidden-slide" : "active-slide"
       )}
       src={path}
       alt={"Home"}
       onClick={() => {}}
     />
   ));
-  return <div className="w-full">{carouselImages}<div>{CAROUSEL_IMAGE_PATHS.map((path, index) => <div className="bg"></div>)}</div></div>;
+  return (
+    <div className="w-full">
+      {carouselImages}
+      {/* <div>
+        {CAROUSEL_IMAGE_PATHS.map((path, index) => (
+          <div className="bg"></div>
+        ))}
+      </div> */}
+    </div>
+  );
 }

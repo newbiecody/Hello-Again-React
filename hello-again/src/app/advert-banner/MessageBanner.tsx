@@ -12,7 +12,7 @@ export default function MessageBanner({ messages }: MessageBannerProps) {
   triggerCbOnInterval(() => {
     setMessageIndex((prev) => (prev + 1) % messages.length);
   }, 5000)
-  return <div className="flex justify-center w-full p-2 bg-[#444c48] text-[#ddd7c7] text-sm">
+  return <div className="flex justify-center w-full p-2 bg-ha-dirty-green text-ha-cream text-sm border-b border-ha-cream">
     {messages[messageIndex]}
   </div>;
 }

@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import React from "react";
+import { ReactElement, ReactNode, useEffect } from "react";
 
 export const triggerCbOnInterval = (cb: () => void, delay: number = 1000) => {
   useEffect(() => {
@@ -11,7 +12,7 @@ export const triggerCbOnInterval = (cb: () => void, delay: number = 1000) => {
   }, [cb, delay]);
 };
 
-export const convertCentsToDollars = (cents: number) => cents > 0 ? (cents / 100).toFixed(2) : null;
+export const convertCentsToDollars = (cents: number) => cents > 0 ? (cents / 100).toFixed(2) : 0;
 
 export const joinArrayWithItem = (array: unknown[], separator: unknown) => {
   return array.reduce((acc: unknown[], curr, index) => {
@@ -22,4 +23,8 @@ export const joinArrayWithItem = (array: unknown[], separator: unknown) => {
     }
     return acc;
   }, []);
+}
+
+export const isEventTargetDivElement = (target: EventTarget | null): target is HTMLDivElement => {
+  return target instanceof HTMLDivElement;
 }

@@ -5,6 +5,8 @@ import { SERVER_ANNOUNCEMENTS } from "./constants";
 import MessageBanner from "./advert-banner/MessageBanner";
 import Navbar from "./nav/Navbar";
 import Footer from "./footer/Footer";
+import CartProvider from "./CartContext";
+import Cart from "./components/cart/Cart";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,10 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MessageBanner messages={SERVER_ANNOUNCEMENTS} />
-        <Navbar />
-        {children}
-        <Footer/>
+        <CartProvider>
+          <MessageBanner messages={SERVER_ANNOUNCEMENTS} />
+          <Navbar />
+          {children}
+          <Footer />
+          <Cart />
+        </CartProvider>
       </body>
     </html>
   );

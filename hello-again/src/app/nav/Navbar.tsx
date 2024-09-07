@@ -33,8 +33,8 @@ function NavbarMenuItems(props: NavbarMenuItemsProps) {
 export default function Navbar({}) {
   const [isHoveringOverShop, setIsHoveringOverShopButton] = useState(false);
   return (
-    <div>
-      <div className="grid grid-cols-3 w-full text-[#444c48] space-between align-middle">
+    <div className="bg-ha-dirty-green">
+      <div className="grid grid-cols-3 w-full text-ha-cream space-between align-middle">
         <div className="flex justify-end">
           <ul className="flex space-x-8">
             <NavbarMenuItems label="Home" link="/"/>

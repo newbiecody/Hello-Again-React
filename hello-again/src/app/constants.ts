@@ -3,15 +3,16 @@ export const SERVER_ANNOUNCEMENTS: string[] = [
   "Surprise your mother this coming mother's day with our special frames, fully customizable!",
 ];
 
-export const PRODUCTS_INFORMATION: {
-  productId: string;
+export interface IProductInformation {
+  name: string;
   label: string;
   price: number; // in cents, sgd
-  previews: // {path: string, type: 'image' | 'video'}[] |
-  string[];
-}[] = [
+  previews: string[];
+  description: string;
+}
+export const PRODUCTS_INFORMATION: IProductInformation[] = [
   {
-    productId: "27dcd317-7498-4fff-81b2-1309c7451444",
+    name: "always",
     label: "Always",
     price: 1500,
     previews: [
@@ -19,15 +20,19 @@ export const PRODUCTS_INFORMATION: {
       "/images/Always/1.JPG",
       "/images/Always/Always.JPG",
     ],
+    description:
+      "Hand-assembled with care, say congratulations to somebody you love with a dried flower bouquet and graduation bear to celebrate the milestone.",
   },
   {
-    productId: "0308499c-e7ac-4f09-86b7-db9a2fe36141",
+    name: "timeless-classic",
     label: "Timeless: Classic",
     price: 3190,
     previews: ["/images/Timeless 1.0/Timeless 1.0.JPG"],
+    description:
+      "Hand-assembled with care, say congratulations to somebody you love with a dried flower bouquet and graduation bear to celebrate the milestone.",
   },
   {
-    productId: "0072e84f-d5f3-4125-b876-9ae5631ddc24",
+    name: "timeless-ageless",
     label: "Timeless: Ageless",
     price: 3190,
     previews: [
@@ -35,9 +40,11 @@ export const PRODUCTS_INFORMATION: {
       "/images/Timeless 1.1/0.JPG",
       "/images/Timeless 1.1/1.JPG",
     ],
+    description:
+      "Hand-assembled with care, say congratulations to somebody you love with a dried flower bouquet and graduation bear to celebrate the milestone.",
   },
   {
-    productId: "de0e20af-7869-41d0-a2c4-11a43b355801",
+    name: "a-collection",
     label: "A Collection",
     price: 4990,
     previews: [
@@ -45,9 +52,11 @@ export const PRODUCTS_INFORMATION: {
       "/images/Collection/1.JPG",
       "/images/Collection/2.JPG",
     ],
+    description:
+      "Hand-assembled with care, say congratulations to somebody you love with a dried flower bouquet and graduation bear to celebrate the milestone.",
   },
   {
-    productId: "15bdb5c8-c010-47c5-ac47-e1ac3eedd9a0",
+    name: "genesis",
     label: "Genesis",
     price: 3990,
     previews: [
@@ -55,6 +64,8 @@ export const PRODUCTS_INFORMATION: {
       "/images/Classic 1.0/0.JPG",
       "/images/Classic 1.0/1.JPG",
     ],
+    description:
+      "Hand-assembled with care, say congratulations to somebody you love with a dried flower bouquet and graduation bear to celebrate the milestone.",
   },
 ];
 
